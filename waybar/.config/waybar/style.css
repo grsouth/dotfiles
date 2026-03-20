@@ -5,12 +5,14 @@
 
 window#waybar {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: JetBrainsMono Nerd Font, monospace;
+    font-family:
+        JetBrainsMono Nerd Font,
+        monospace;
     background-color: transparent;
     border-bottom: 0px;
-    color: #ebdbb2;
+    color: #b3b1ad;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
@@ -38,8 +40,8 @@ button {
 #pulseaudio,
 #tray {
     padding: 0 10px;
-    background-color: #282828;
-    color: #ebdbb2;
+    background-color: #11151c;
+    color: #b3b1ad;
 }
 
 #clock {
@@ -51,7 +53,7 @@ label:focus {
 }
 
 #pulseaudio.muted {
-    background-color: #458588;
+    background-color: #f07178;
 }
 
 #tray > .passive {

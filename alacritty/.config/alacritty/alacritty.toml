@@ -1,6 +1,6 @@
 [font]
 size = 13.0
-offset = { x = 0, y = 1 } 
+offset = { x = 0, y = 1 }
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
@@ -19,6 +19,34 @@ style = "Bold Italic"
 style = { shape = "Beam", blinking = "On" }
 blink_interval = 750
 unfocused_hollow = true
+
+[colors.primary]
+background = "#0A0E14"
+foreground = "#B3B1AD"
+
+[colors.cursor]
+text = "#0A0E14"
+cursor = "#FFB454"
+
+[colors.normal]
+black = "#01060E"
+red = "#EA6C73"
+green = "#91B362"
+yellow = "#F9AF4F"
+blue = "#53BDFA"
+magenta = "#FAE994"
+cyan = "#90E1C6"
+white = "#C7C7C7"
+
+[colors.bright]
+black = "#686868"
+red = "#F07178"
+green = "#AAD94C"
+yellow = "#FFB454"
+blue = "#59C2FF"
+magenta = "#FFEE99"
+cyan = "#95E6CB"
+white = "#FFFFFF"
 
 [hints]
 alphabet = "jfkdls;ahgurieowpq"

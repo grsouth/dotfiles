@@ -15,18 +15,18 @@ configuration {
 }
 
 * {
-    bg:         #141617;
-    bg-alt:     #181b1c;
-    fg:         #e7dcc0;
-    fg-muted:   #a89984;
-    sel:        #24484b;
-    sel-text:   #e7dcc0; 
+    bg:         #0a0e14;
+    bg-alt:     #11151c;
+    fg:         #b3b1ad;
+    fg-muted:   #5c6773;
+    sel:        #1f2430;
+    sel-text:   #e6e1cf;
 }
 
 window {
     width: 600px;
     border: 2px;
-    border-color: #0b3a46;
+    border-color: #ffb454;
     border-radius: 12px;
     background-color: @bg;
 }
