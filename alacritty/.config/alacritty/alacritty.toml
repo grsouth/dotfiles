@@ -1,0 +1,31 @@
+[font]
+size = 13.0
+offset = { x = 0, y = 1 } 
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 750
+unfocused_hollow = true
+
+[hints]
+alphabet = "jfkdls;ahgurieowpq"
+
+[[hints.enabled]]
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https?://|news:|file://|git://|ssh:|ftp://)[^\\u0000-\\u001F\\u007F-\\u009F<>\"\\s{-}\\^⟨⟩`]+"
+command = "xdg-open"
+post_processing = true
+mouse = { enabled = true }
+binding = { key = "O", mods = "Control|Shift" }

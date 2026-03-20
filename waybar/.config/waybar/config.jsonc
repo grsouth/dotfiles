@@ -1,0 +1,65 @@
+// -*- mode: jsonc -*-
+[
+  {
+    "output": ["DP-1", "DP-2"],
+    "height": 32,
+    "spacing": 10,
+
+    "modules-left": [
+      "cpu",
+      "temperature",
+      "memory"
+    ],
+    "modules-center": [
+      "clock",
+      "custom/date"
+    ],
+    "modules-right": [
+      "pulseaudio",
+      "tray"
+    ],
+
+    "tray": {
+      "icon-size": 14,
+      "spacing": 10
+    },
+
+    "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format": "{:%I:%M %p}",
+      "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "custom/date": {
+      "format": "{}",
+      "exec": "date '+%a %b %d'",
+      "interval": 60,
+      "tooltip": false
+    },
+
+    "cpu": {
+      "format": " {usage}%   ",
+      "tooltip": true
+    },
+
+    "memory": {
+      "format": " {}%   "
+    },
+
+    "temperature": {
+      "critical-threshold": 80,
+      "format": " {temperatureC}°C ",
+      "format-icons": ["", "", ""]
+    },
+
+    "pulseaudio": {
+      "format": " {volume}% {icon} ",
+      "format-muted": " muted",
+      "format-icons": {
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol",
+      "scroll-step": 5
+    }
+  }
+]

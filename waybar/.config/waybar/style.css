@@ -1,0 +1,67 @@
+* {
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+window#waybar {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrainsMono Nerd Font, monospace;
+    background-color: transparent;
+    border-bottom: 0px;
+    color: #ebdbb2;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-right {
+    margin: 4px 10px 0 0;
+}
+
+.modules-center {
+    margin: 4px 0 0 0;
+}
+
+.modules-left {
+    margin: 4px 0 0 10px;
+}
+
+button {
+    border: none;
+}
+
+#clock,
+#custom-date,
+#pulseaudio,
+#tray {
+    padding: 0 10px;
+    background-color: #282828;
+    color: #ebdbb2;
+}
+
+#clock {
+    font-weight: 700;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio.muted {
+    background-color: #458588;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#tray menu {
+    font-family: sans-serif;
+}

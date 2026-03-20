@@ -1,0 +1,119 @@
+configuration {
+    modi: "drun,run,window";
+    matching: "fuzzy";
+    sort: true;
+    tokenize: true;
+    show-icons: true;
+    case-sensitive: false;
+    font: "FiraCode Nerd Font 11";
+    icon-theme: "Papirus";
+    display-drun: "Apps";
+    drun-display-format: "{name}";
+    disable-history: false;
+    cycle: true;
+    hover-select: false;
+}
+
+* {
+    bg:         #141617;
+    bg-alt:     #181b1c;
+    fg:         #e7dcc0;
+    fg-muted:   #a89984;
+    sel:        #24484b;
+    sel-text:   #e7dcc0; 
+}
+
+window {
+    width: 600px;
+    border: 2px;
+    border-color: #0b3a46;
+    border-radius: 12px;
+    background-color: @bg;
+}
+
+mainbox {
+    background-color: @bg;
+    padding: 10px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 0px 0px 8px 0px;
+}
+
+prompt {
+    text-color: @fg-muted;
+}
+
+entry {
+    text-color: @fg;
+    placeholder: "Type to filter";
+    placeholder-color: @fg-muted;
+}
+
+num-filtered-rows {
+    text-color: @fg-muted;
+}
+
+textbox-prompt-colon {
+    text-color: @fg-muted;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 6;
+    spacing: 4px;
+    scrollbar: false;
+    fixed-height: true;
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg;
+    border-radius: 8px;
+    padding: 8px 10px;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 20px;
+    margin: 0px 10px 0px 0px;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+/* normal rows */
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+/* selected row */
+element selected.normal,
+element selected.active,
+element selected.urgent,
+element alternate.selected {
+    background-color: @sel;
+    text-color: @sel-text;
+}
+
+/* active/urgent rows if they appear */
+element normal.active,
+element alternate.active {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color: transparent;
+    text-color: @fg;
+}
