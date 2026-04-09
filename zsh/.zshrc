@@ -14,6 +14,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+# ---------- Path ----------
+export PATH=$PATH:/usr/local/go/bin
+export PATH="/home/grs/.npm-global/bin:$PATH"
 
 # ---------- Basics ----------
 export ZDOTDIR="$HOME"
@@ -71,3 +74,7 @@ if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 fi
 
 eval "$(starship init zsh)"
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# OpenClaw Completion
+source "/home/grs/.openclaw/completions/openclaw.zsh"

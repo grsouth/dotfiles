@@ -1,16 +1,24 @@
+@import "/usr/lib/hyprwhspr/config/waybar/hyprwhspr-style.css";
+
+@define-color bg #11151c;
+@define-color bg_elevated #1a2230;
+@define-color fg #d7d3cc;
+@define-color muted #b3b1ad;
+@define-color accent #f2cc8f;
+@define-color success #81b29a;
+@define-color border rgba(255, 255, 255, 0.08);
+
 * {
-    font-size: 16px;
-    border-radius: 3px;
+    font-size: 15px;
 }
 
 window#waybar {
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family:
         JetBrainsMono Nerd Font,
         monospace;
     background-color: transparent;
-    border-bottom: 0px;
-    color: #b3b1ad;
+    border-bottom: 0;
+    color: @fg;
     transition-property: background-color;
     transition-duration: 0.5s;
 }
@@ -33,19 +41,54 @@ window#waybar.hidden {
 
 button {
     border: none;
+    box-shadow: none;
 }
 
 #clock,
-#custom-date,
+#custom-hyprwhspr,
 #pulseaudio,
+#cpu,
+#memory,
+#temperature,
 #tray {
-    padding: 0 10px;
-    background-color: #11151c;
-    color: #b3b1ad;
+    margin: 0 4px;
+    padding: 0 12px;
+    min-height: 28px;
+    background-color: rgba(17, 21, 28, 0.9);
+    border: 1px solid @border;
+    border-radius: 10px;
+    color: @muted;
+}
+
+#clock,
+#custom-hyprwhspr {
+    padding: 0 16px;
+    background-image: linear-gradient(180deg, @bg_elevated 0%, @bg 100%);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
 }
 
 #clock {
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 800;
+    color: @accent;
+}
+
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#tray {
+    background-image: none;
+}
+
+#custom-hyprwhspr {
+    color: @success;
+}
+
+#cpu,
+#memory,
+#temperature {
+    color: @fg;
 }
 
 label:focus {
@@ -54,6 +97,7 @@ label:focus {
 
 #pulseaudio.muted {
     background-color: #f07178;
+    color: #11151c;
 }
 
 #tray > .passive {

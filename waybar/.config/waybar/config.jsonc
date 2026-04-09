@@ -11,13 +11,14 @@
       "memory"
     ],
     "modules-center": [
-      "clock",
-      "custom/date"
+      "clock"
+      
     ],
     "modules-right": [
+      "custom/hyprwhspr",
       "pulseaudio",
       "tray"
-    ],
+          ],
 
     "tray": {
       "icon-size": 14,
@@ -26,29 +27,22 @@
 
     "clock": {
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format": "{:%I:%M %p}",
+      "format": "{:%I:%M %p  ·  %a %b %d}",
       "format-alt": "{:%Y-%m-%d}"
     },
 
-    "custom/date": {
-      "format": "{}",
-      "exec": "date '+%a %b %d'",
-      "interval": 60,
-      "tooltip": false
-    },
-
     "cpu": {
-      "format": " {usage}%   ",
+      "format": "{usage}% ",
       "tooltip": true
     },
 
     "memory": {
-      "format": " {}%   "
+      "format": "{}% "
     },
 
     "temperature": {
       "critical-threshold": 80,
-      "format": " {temperatureC}°C ",
+      "format": "{temperatureC}°C {icon}",
       "format-icons": ["", "", ""]
     },
 
@@ -60,6 +54,16 @@
       },
       "on-click": "pavucontrol",
       "scroll-step": 5
-    }
+    },
+	"custom/hyprwhspr": {
+	  "exec": "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh status",
+	  "interval": 2,
+	  "return-type": "json",
+	  "exec-on-event": true,
+	  "format": "{}",
+	  "on-click": "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh toggle",
+	  "on-click-right": "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh restart",
+	  "tooltip": true
+	}
   }
 ]
