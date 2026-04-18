@@ -76,5 +76,3 @@ fi
 eval "$(starship init zsh)"
 export PATH="$HOME/.npm-global/bin:$PATH"
 
-# OpenClaw Completion
-source "/home/grs/.openclaw/completions/openclaw.zsh"
