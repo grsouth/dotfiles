@@ -1,4 +1,4 @@
-@import "/usr/lib/hyprwhspr/config/waybar/hyprwhspr-style.css";
+
 
 @define-color bg #11151c;
 @define-color bg_elevated #1a2230;
@@ -50,6 +50,8 @@ button {
 #cpu,
 #memory,
 #temperature,
+#battery,
+#network,
 #tray {
     margin: 0 4px;
     padding: 0 12px;
@@ -96,6 +98,21 @@ label:focus {
 }
 
 #pulseaudio.muted {
+    background-color: #f07178;
+    color: #11151c;
+}
+
+#battery.warning {
+    background-color: #ffb454;
+    color: #11151c;
+}
+
+#battery.critical {
+    background-color: #f07178;
+    color: #11151c;
+}
+
+#network.disconnected {
     background-color: #f07178;
     color: #11151c;
 }
