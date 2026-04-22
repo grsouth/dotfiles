@@ -8,10 +8,14 @@ configuration {
     font: "FiraCode Nerd Font 11";
     icon-theme: "Papirus";
     display-drun: "Apps";
+    display-run: "Run";
     drun-display-format: "{name}";
     disable-history: false;
     cycle: true;
-    hover-select: false;
+    hover-select: true;
+    window-format: "{w} · {c} · {t}";
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
 }
 
 * {
@@ -24,23 +28,28 @@ configuration {
 }
 
 window {
-    width: 600px;
+    width: 680px;
+    location: north;
+    anchor: north;
+    y-offset: 32px;
     border: 2px;
     border-color: #ffb454;
-    border-radius: 12px;
+    border-radius: 14px;
     background-color: @bg;
 }
 
 mainbox {
     background-color: @bg;
-    padding: 10px;
+    padding: 12px;
+    spacing: 8px;
+    children: [ "inputbar", "listview", "message" ];
 }
 
 inputbar {
     background-color: @bg-alt;
-    border-radius: 8px;
-    padding: 10px 12px;
-    margin: 0px 0px 8px 0px;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 0px 0px 10px 0px;
 }
 
 prompt {
@@ -49,8 +58,6 @@ prompt {
 
 entry {
     text-color: @fg;
-    placeholder: "Type to filter";
-    placeholder-color: @fg-muted;
 }
 
 num-filtered-rows {
@@ -64,8 +71,8 @@ textbox-prompt-colon {
 listview {
     background-color: transparent;
     columns: 1;
-    lines: 6;
-    spacing: 4px;
+    lines: 8;
+    spacing: 6px;
     scrollbar: false;
     fixed-height: true;
 }
@@ -73,14 +80,14 @@ listview {
 element {
     background-color: transparent;
     text-color: @fg;
-    border-radius: 8px;
-    padding: 8px 10px;
+    border-radius: 10px;
+    padding: 10px 12px;
 }
 
 element-icon {
     background-color: transparent;
-    size: 20px;
-    margin: 0px 10px 0px 0px;
+    size: 22px;
+    margin: 0px 12px 0px 0px;
 }
 
 element-text {
@@ -116,4 +123,14 @@ element normal.urgent,
 element alternate.urgent {
     background-color: transparent;
     text-color: @fg;
+}
+
+message {
+    background-color: transparent;
+    margin: 6px 2px 0px 2px;
+}
+
+textbox {
+    text-color: @fg-muted;
+    background-color: transparent;
 }
