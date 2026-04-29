@@ -16,8 +16,8 @@ window#waybar {
     font-family:
         JetBrainsMono Nerd Font,
         monospace;
-    background-color: transparent;
-    border-bottom: 0;
+    background-color: rgba(17, 21, 28, 0.58);
+    border-bottom: 1px solid @border;
     color: @fg;
     transition-property: background-color;
     transition-duration: 0.5s;
@@ -28,15 +28,15 @@ window#waybar.hidden {
 }
 
 .modules-right {
-    margin: 4px 10px 0 0;
+    margin: 0 10px 0 0;
 }
 
 .modules-center {
-    margin: 4px 0 0 0;
+    margin: 0;
 }
 
 .modules-left {
-    margin: 4px 0 0 10px;
+    margin: 0 0 0 10px;
 }
 
 button {
@@ -46,15 +46,16 @@ button {
 
 #clock,
 #custom-hyprwhspr,
+#custom-amd-gpu,
+#custom-amd-vram,
 #pulseaudio,
 #cpu,
 #memory,
-#temperature,
 #tray {
-    margin: 0 4px;
+    margin: 2px 4px;
     padding: 0 12px;
-    min-height: 28px;
-    background-color: rgba(17, 21, 28, 0.9);
+    min-height: 24px;
+    background-color: rgba(17, 21, 28, 0.78);
     border: 1px solid @border;
     border-radius: 10px;
     color: @muted;
@@ -62,7 +63,6 @@ button {
 
 #clock,
 #custom-hyprwhspr {
-    padding: 0 16px;
     background-image: linear-gradient(180deg, @bg_elevated 0%, @bg 100%);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
 }
@@ -75,7 +75,8 @@ button {
 
 #cpu,
 #memory,
-#temperature,
+#custom-amd-gpu,
+#custom-amd-vram,
 #pulseaudio,
 #tray {
     background-image: none;
@@ -87,8 +88,27 @@ button {
 
 #cpu,
 #memory,
-#temperature {
+#custom-amd-gpu,
+#custom-amd-vram {
     color: @fg;
+}
+
+#custom-amd-gpu.warning,
+#custom-amd-vram.warning {
+    color: @accent;
+}
+
+#cpu.critical,
+#memory.critical,
+#custom-amd-gpu.critical,
+#custom-amd-vram.critical {
+    background-color: #f07178;
+    color: #11151c;
+}
+
+#custom-amd-gpu.error,
+#custom-amd-vram.error {
+    color: #f07178;
 }
 
 label:focus {

@@ -7,8 +7,9 @@
 
     "modules-left": [
       "cpu",
-      "temperature",
-      "memory"
+      "memory",
+      "custom/amd-gpu",
+      "custom/amd-vram"
     ],
     "modules-center": [
       "clock"
@@ -32,26 +33,23 @@
     },
 
     "cpu": {
-      "format": "{usage}% ",
+      "format": "CPU {usage}%",
+      "states": {
+        "critical": 90
+      },
       "tooltip": true
     },
 
     "memory": {
-      "format": "{}% "
-    },
-
-    "temperature": {
-      "critical-threshold": 80,
-      "format": "{temperatureC}°C {icon}",
-      "format-icons": ["", "", ""]
+      "format": "RAM {}%",
+      "states": {
+        "critical": 90
+      }
     },
 
     "pulseaudio": {
-      "format": " {volume}% {icon} ",
-      "format-muted": " muted",
-      "format-icons": {
-        "default": ["", "", ""]
-      },
+      "format": "VOL {volume}%",
+      "format-muted": "VOL muted",
       "on-click": "pavucontrol",
       "scroll-step": 5
     },
@@ -63,6 +61,20 @@
 	  "format": "{}",
 	  "on-click": "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh toggle",
 	  "on-click-right": "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh restart",
+	  "tooltip": true
+	},
+	"custom/amd-gpu": {
+	  "exec": "~/.config/waybar/scripts/amd-gpu.sh gpu",
+	  "return-type": "json",
+	  "interval": 2,
+	  "format": "{}",
+	  "tooltip": true
+	},
+	"custom/amd-vram": {
+	  "exec": "~/.config/waybar/scripts/amd-gpu.sh vram",
+	  "return-type": "json",
+	  "interval": 2,
+	  "format": "{}",
 	  "tooltip": true
 	}
   }
