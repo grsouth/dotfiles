@@ -31,3 +31,5 @@ dispatch focusworkspaceoncurrentmonitor $MAIN_WS ; \
 dispatch focusmonitor $TOP_MONITOR ; \
 dispatch focusworkspaceoncurrentmonitor $TOP_WS ; \
 dispatch focusmonitor $focused_monitor"
+
+pkill -RTMIN+8 waybar 2>/dev/null || true

@@ -12,8 +12,10 @@
       "custom/amd-vram"
     ],
     "modules-center": [
+      "custom/workspace-group-1",
+      "custom/workspace-group-2",
+      "custom/workspace-group-3",
       "clock"
-      
     ],
     "modules-right": [
       "custom/hyprwhspr",
@@ -75,6 +77,33 @@
 	  "return-type": "json",
 	  "interval": 2,
 	  "format": "{}",
+	  "tooltip": true
+	},
+	"custom/workspace-group-1": {
+	  "exec": "~/.config/waybar/scripts/workspace-group.sh 1",
+	  "return-type": "json",
+	  "interval": 1,
+	  "signal": 8,
+	  "format": "{}",
+	  "on-click": "~/.config/hypr/scripts/workspace-group.sh 1",
+	  "tooltip": true
+	},
+	"custom/workspace-group-2": {
+	  "exec": "~/.config/waybar/scripts/workspace-group.sh 2",
+	  "return-type": "json",
+	  "interval": 1,
+	  "signal": 8,
+	  "format": "{}",
+	  "on-click": "~/.config/hypr/scripts/workspace-group.sh 2",
+	  "tooltip": true
+	},
+	"custom/workspace-group-3": {
+	  "exec": "~/.config/waybar/scripts/workspace-group.sh 3",
+	  "return-type": "json",
+	  "interval": 1,
+	  "signal": 8,
+	  "format": "{}",
+	  "on-click": "~/.config/hypr/scripts/workspace-group.sh 3",
 	  "tooltip": true
 	}
   }

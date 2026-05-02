@@ -46,6 +46,9 @@ button {
 
 #clock,
 #custom-hyprwhspr,
+#custom-workspace-group-1,
+#custom-workspace-group-2,
+#custom-workspace-group-3,
 #custom-amd-gpu,
 #custom-amd-vram,
 #pulseaudio,
@@ -65,6 +68,40 @@ button {
 #custom-hyprwhspr {
     background-image: linear-gradient(180deg, @bg_elevated 0%, @bg 100%);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+#custom-workspace-group-1,
+#custom-workspace-group-2,
+#custom-workspace-group-3 {
+    min-width: 18px;
+    padding: 0 9px;
+    font-weight: 800;
+}
+
+#custom-workspace-group-1.active,
+#custom-workspace-group-2.active,
+#custom-workspace-group-3.active {
+    background-color: @accent;
+    color: @bg;
+}
+
+#custom-workspace-group-1.partial,
+#custom-workspace-group-2.partial,
+#custom-workspace-group-3.partial {
+    border-color: @accent;
+    color: @accent;
+}
+
+#custom-workspace-group-1.occupied,
+#custom-workspace-group-2.occupied,
+#custom-workspace-group-3.occupied {
+    color: @fg;
+}
+
+#custom-workspace-group-1.empty,
+#custom-workspace-group-2.empty,
+#custom-workspace-group-3.empty {
+    color: @muted;
 }
 
 #clock {
