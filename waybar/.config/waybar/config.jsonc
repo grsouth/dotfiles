@@ -15,7 +15,8 @@
       "custom/workspace-group-1",
       "custom/workspace-group-2",
       "custom/workspace-group-3",
-      "clock"
+      "clock#time",
+      "clock#date"
     ],
     "modules-right": [
       "custom/hyprwhspr",
@@ -28,9 +29,14 @@
       "spacing": 10
     },
 
-    "clock": {
+    "clock#time": {
+      "format": "{:%I:%M %p}",
+      "format-alt": "{:%H:%M}"
+    },
+
+    "clock#date": {
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format": "{:%I:%M %p  ·  %a %b %d}",
+      "format": "{:%a %b %d}",
       "format-alt": "{:%Y-%m-%d}"
     },
 
