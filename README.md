@@ -4,26 +4,67 @@ Arch Linux dotfiles for a Hyprland setup with Waybar, Rofi, Alacritty, Starship,
 
 ## Dependencies
 
+These are the packages/tools referenced by the tracked configs and scripts.
 
-```sh
-sudo pacman -S \
-  hyprland hyprpaper hyprpolkitagent waybar rofi alacritty zsh starship \
-  fzf zsh-autosuggestions zsh-syntax-highlighting eza bat grim slurp \
-  wl-clipboard pipewire wireplumber playerctl polkit xdg-utils swaync libnotify \
-  thunar vivaldi micro pavucontrol papirus-icon-theme \
-  ttf-jetbrains-mono-nerd ttf-firacode-nerd
-```
+- Dotfile management:
+  - `stow`
 
-This config also expects `hyprwhspr` to be installed separately. Waybar and Hyprland reference files under `/usr/lib/hyprwhspr/...`.
+- Hyprland session:
+  - `hyprland`
+  - `hyprpaper`
+  - `hyprpolkitagent`
+  - `polkit`
+  - `udiskie`
+  - `xdg-utils`
+  - `xdg-desktop-portal`
+  - `xdg-desktop-portal-hyprland`
+  - `xdg-desktop-portal-gtk`
 
-## Install
+- Bar, launcher, and notifications:
+  - `waybar`
+  - `rofi`
+  - `swaync`
+  - `libnotify`
+  - `pavucontrol`
+  - `papirus-icon-theme`
 
-```sh
-stow alacritty hypr rofi starship swaync waybar zsh
-```
+- Desktop applications:
+  - `alacritty`
+  - `thunar`
+  - `vivaldi`
+  - `micro`
 
-## Notification test
+- Shell and prompt:
+  - `zsh`
+  - `starship`
+  - `fzf`
+  - `zsh-autosuggestions`
+  - `zsh-syntax-highlighting`
+  - `eza`
+  - `bat`
 
-```sh
-notify-send "Notifications" "SwayNC is wired up"
-```
+- Audio and media controls:
+  - `pipewire`
+  - `pipewire-pulse`
+  - `wireplumber`
+  - `playerctl`
+
+- Screenshot, clipboard, and script utilities:
+  - `grim`
+  - `slurp`
+  - `wl-clipboard`
+  - `jq`
+  - `which`
+
+- Fonts:
+  - `ttf-jetbrains-mono-nerd`
+  - `ttf-firacode-nerd`
+
+- Optional or separately installed tools referenced by configs:
+  - `hyprwhspr` is expected separately; Waybar and Hyprland reference files under `/usr/lib/hyprwhspr/...`.
+  - `hyprtoolkit` has a tracked config in `hypr/.config/hypr/hyprtoolkit.conf`.
+  - `hypridle` has a tracked config, but it is not currently autostarted by `hyprland.conf`.
+  - `hyprshutdown` is used only if present; the shutdown keybind falls back to `hyprctl dispatch exit`.
+
+SwayNC replaces other notification daemons. If `dunst` is installed and running, disable or mask `dunst.service` so SwayNC can own `org.freedesktop.Notifications`.
+
