@@ -46,6 +46,7 @@ button {
 
 #clock,
 #custom-hyprwhspr,
+#custom-notification,
 #custom-workspace-group-1,
 #custom-workspace-group-2,
 #custom-workspace-group-3,
@@ -121,6 +122,23 @@ button {
 
 #custom-hyprwhspr {
     color: @success;
+}
+
+#custom-notification {
+    color: @accent;
+}
+
+#custom-notification.notification {
+    color: @fg;
+}
+
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none,
+#custom-notification.inhibited-notification,
+#custom-notification.inhibited-none,
+#custom-notification.dnd-inhibited-notification,
+#custom-notification.dnd-inhibited-none {
+    color: @danger;
 }
 
 #cpu,
