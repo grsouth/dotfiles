@@ -11,9 +11,15 @@
     font-family:
         JetBrainsMono Nerd Font,
         monospace;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.35;
     color: @fg;
+}
+
+label {
+    min-height: 22px;
+    padding-top: 3px;
+    padding-bottom: 2px;
 }
 
 .control-center {
@@ -132,8 +138,8 @@
 .widget-volume,
 .widget-backlight {
     margin: 0 0 8px;
-    padding: 12px 10px;
-    min-height: 28px;
+    padding: 16px 10px 12px;
+    min-height: 40px;
     background-image: linear-gradient(180deg, @bg_elevated 0%, @bg 100%);
     border: 1px solid @border;
     border-radius: 10px;
@@ -144,20 +150,30 @@
     color: @accent;
 }
 
-.widget-title > label,
-.widget-dnd > label,
-.widget-inhibitors > label {
-    padding: 1px 0;
+.widget-title label,
+.widget-dnd label,
+.widget-inhibitors label {
+    margin-top: 1px;
+    min-height: 24px;
+    padding-top: 4px;
+    padding-bottom: 3px;
 }
 
 .widget-title > button,
 .widget-inhibitors > button {
-    padding: 5px 10px;
-    min-height: 24px;
+    padding: 6px 10px;
+    min-height: 28px;
     background-color: rgba(17, 21, 28, 0.78);
     border: 1px solid @border;
     border-radius: 8px;
     color: @muted;
+}
+
+.widget-title > button label,
+.widget-inhibitors > button label {
+    min-height: 22px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .widget-title > button:hover,
